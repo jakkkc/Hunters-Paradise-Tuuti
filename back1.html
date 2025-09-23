@@ -4,16 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hunters Paradise Tuuti - Luxury Accommodation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
-            --primary: #a0522d; /* Burnt orange/brown */
-            --secondary: #8b4513; /* Rich brown */
-            --accent: #d2691e; /* Light burnt orange */
-            --light: #fdf6f0; /* Warm white */
-            --dark: #2c1810; /* Dark brown */
-            --gold: #d4af37; /* Accent gold for luxury */
+            --primary: #b76542;
+            --secondary: #432a17;
+            --light: #f8f5f2;
+            --dark: #1a120b;
         }
 
         * {
@@ -37,19 +35,18 @@
 
         /* Header Styles */
         header {
-            background-color: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: fixed;
             width: 100%;
             z-index: 1000;
-            transition: all 0.3s ease;
         }
 
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
+            padding: 20px 0;
         }
 
         .logo {
@@ -70,31 +67,15 @@
             color: var(--dark);
             font-weight: 500;
             transition: color 0.3s;
-            position: relative;
-        }
-
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--primary);
-            transition: width 0.3s ease;
         }
 
         nav ul li a:hover {
             color: var(--primary);
         }
 
-        nav ul li a:hover::after {
-            width: 100%;
-        }
-
         .btn {
             display: inline-block;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
+            background-color: var(--primary);
             color: white;
             padding: 12px 25px;
             border-radius: 30px;
@@ -103,41 +84,11 @@
             transition: all 0.3s;
             border: none;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(160, 82, 45, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: all 0.5s;
         }
 
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(160, 82, 45, 0.4);
-        }
-
-        .btn:hover::before {
-            left: 100%;
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            box-shadow: none;
-        }
-
-        .btn-outline:hover {
-            background: var(--primary);
-            color: white;
+            background-color: var(--secondary);
+            transform: translateY(-2px);
         }
 
         /* Hero Section */
@@ -155,18 +106,15 @@
         }
 
         .hero-content h1 {
-            font-family: 'Playfair Display', serif;
             font-size: 3.5rem;
             margin-bottom: 20px;
             font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .hero-content p {
             font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto 30px;
-            font-weight: 300;
         }
 
         .hero-logo {
@@ -187,7 +135,6 @@
         }
 
         .section-title h2 {
-            font-family: 'Playfair Display', serif;
             font-size: 2.5rem;
             color: var(--secondary);
             position: relative;
@@ -203,7 +150,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 3px;
-            background: linear-gradient(to right, var(--primary), var(--accent));
+            background-color: var(--primary);
         }
 
         .about-content {
@@ -216,12 +163,7 @@
         .about-image {
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .about-image:hover {
-            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .about-image img {
@@ -232,82 +174,36 @@
 
         .about-text p {
             margin-bottom: 20px;
-            font-size: 1.05rem;
         }
 
-        /* Accommodation Section - REDESIGNED */
+        /* Accommodation Section */
         .accommodation {
             padding: 100px 0;
-            background: linear-gradient(135deg, var(--light) 0%, #f8efe6 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .accommodation::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23d2691e' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
-            z-index: 0;
-        }
-
-        .accommodation-content {
-            position: relative;
-            z-index: 1;
+            background-color: var(--light);
         }
 
         .accommodation-types {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
+            gap: 30px;
             margin-bottom: 50px;
         }
 
         .room-card {
             background-color: white;
-            border-radius: 15px;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s ease;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
         }
 
         .room-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .room-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(to right, var(--primary), var(--accent));
-            z-index: 2;
         }
 
         .room-image {
-            height: 280px;
+            height: 250px;
             overflow: hidden;
-            position: relative;
-        }
-
-        .room-image::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 50%;
-            background: linear-gradient(transparent, rgba(0,0,0,0.1));
         }
 
         .room-image img {
@@ -318,95 +214,46 @@
         }
 
         .room-card:hover .room-image img {
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
 
         .room-content {
             padding: 30px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
         }
 
         .room-content h3 {
-            font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
             margin-bottom: 15px;
             color: var(--secondary);
-            position: relative;
-            display: inline-block;
-        }
-
-        .room-content h3::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background: var(--accent);
         }
 
         .room-content p {
             margin-bottom: 20px;
-            flex-grow: 1;
-        }
-
-        .room-features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .room-features li {
-            list-style: none;
-            padding-left: 20px;
-            position: relative;
-            margin-bottom: 8px;
-        }
-
-        .room-features li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-weight: bold;
-        }
-
-        .room-actions {
-            display: flex;
-            justify-content: space-between;
-            margin-top: auto;
         }
 
         /* Pricing Table */
         .pricing {
             margin-top: 50px;
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
 
         .pricing-table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
 
         .pricing-table th,
         .pricing-table td {
             padding: 15px;
             text-align: center;
-            border: 1px solid #eee;
+            border: 1px solid #ddd;
         }
 
         .pricing-table th {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
+            background-color: var(--primary);
             color: white;
             font-weight: 600;
         }
@@ -416,10 +263,10 @@
         }
 
         .pricing-table tr:hover {
-            background-color: #f5f5f5;
+            background-color: #f1f1f1;
         }
 
-        /* Facilities Section - UPDATED with Learn More buttons */
+        /* Facilities Section - UPDATED */
         .facilities {
             padding: 100px 0;
             background-color: white;
@@ -433,19 +280,17 @@
 
         .facility-card {
             background-color: var(--light);
-            border-radius: 15px;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
             display: flex;
             flex-direction: column;
             height: 100%;
-            position: relative;
         }
 
         .facility-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
         }
 
         .facility-image {
@@ -466,7 +311,7 @@
         }
 
         .facility-content {
-            padding: 25px;
+            padding: 20px;
             text-align: center;
             flex-grow: 1;
             display: flex;
@@ -476,20 +321,19 @@
 
         .facility-content h3 {
             color: var(--secondary);
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-            font-family: 'Playfair Display', serif;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
         }
 
         .facility-content p {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             flex-grow: 1;
         }
 
         /* Booking Section */
         .booking {
             padding: 100px 0;
-            background: linear-gradient(135deg, var(--light) 0%, #f8efe6 100%);
+            background-color: var(--light);
         }
 
         .booking-container {
@@ -501,8 +345,8 @@
         .booking-form {
             background-color: white;
             padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .form-group {
@@ -523,14 +367,6 @@
             border: 1px solid #ddd;
             border-radius: 5px;
             font-size: 1rem;
-            transition: border 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            border-color: var(--primary);
-            outline: none;
         }
 
         .booking-info {
@@ -540,16 +376,11 @@
         .booking-info h3 {
             margin-bottom: 20px;
             color: var(--secondary);
-            font-family: 'Playfair Display', serif;
         }
 
         .info-item {
             display: flex;
-            margin-bottom: 20px;
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 15px;
         }
 
         .info-item i {
@@ -583,12 +414,6 @@
             justify-content: center;
             color: var(--secondary);
             font-weight: 600;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-5px);
         }
 
         .gallery-item img {
@@ -605,7 +430,7 @@
         /* Contact Section */
         .contact {
             padding: 100px 0;
-            background: linear-gradient(135deg, var(--light) 0%, #f8efe6 100%);
+            background-color: var(--light);
         }
 
         .contact-container {
@@ -615,7 +440,6 @@
         }
 
         .contact-info h3 {
-            font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
             margin-bottom: 20px;
             color: var(--secondary);
@@ -628,11 +452,7 @@
         .contact-item {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 20px;
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 15px;
         }
 
         .contact-item i {
@@ -650,13 +470,6 @@
             border: 1px solid #ddd;
             border-radius: 5px;
             font-size: 1rem;
-            transition: border 0.3s;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            border-color: var(--primary);
-            outline: none;
         }
 
         .contact-form textarea {
@@ -666,7 +479,7 @@
 
         /* Footer */
         footer {
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%);
+            background-color: var(--secondary);
             color: white;
             padding: 50px 0 20px;
         }
@@ -683,7 +496,6 @@
             margin-bottom: 20px;
             position: relative;
             padding-bottom: 10px;
-            font-family: 'Playfair Display', serif;
         }
 
         .footer-col h3::after {
@@ -693,7 +505,7 @@
             left: 0;
             width: 50px;
             height: 2px;
-            background: var(--accent);
+            background-color: var(--primary);
         }
 
         .footer-col ul {
@@ -732,7 +544,7 @@
         }
 
         .social-links a:hover {
-            background-color: var(--accent);
+            background-color: var(--primary);
             transform: translateY(-3px);
         }
 
@@ -758,6 +570,7 @@
                 grid-template-columns: repeat(2, 1fr);
             }
             
+            /* Updated for facilities on tablet */
             .facilities-container {
                 grid-template-columns: repeat(2, 1fr);
                 max-width: 700px;
@@ -793,6 +606,7 @@
                 grid-template-columns: 1fr;
             }
             
+            /* Updated for facilities on mobile */
             .facilities-container {
                 grid-template-columns: 1fr;
                 max-width: 500px;
@@ -800,10 +614,6 @@
             
             .facility-image {
                 height: 220px;
-            }
-
-            .room-features {
-                grid-template-columns: 1fr;
             }
         }
 
@@ -823,16 +633,6 @@
             
             .facilities-container {
                 grid-template-columns: 1fr;
-            }
-
-            .room-actions {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .room-actions .btn {
-                width: 100%;
-                text-align: center;
             }
         }
     </style>
@@ -886,9 +686,9 @@
         </div>
     </section>
 
-    <!-- Accommodation Section - REDESIGNED -->
+    <!-- Accommodation Section -->
     <section class="accommodation" id="accommodation">
-        <div class="container accommodation-content">
+        <div class="container">
             <div class="section-title">
                 <h2>Our Accommodation</h2>
             </div>
@@ -901,7 +701,7 @@
                     <div class="room-content">
                         <h3>Single Bed Room</h3>
                         <p>Our cozy single bed rooms are designed for solo travelers and couples seeking comfort and privacy. Each room is equipped with modern amenities and offers a peaceful retreat after a day of activities.</p>
-                        <ul class="room-features">
+                        <ul>
                             <li>Comfortable single bed</li>
                             <li>En-suite bathroom</li>
                             <li>Private Balcony</li>
@@ -909,12 +709,7 @@
                             <li>Free Wi-Fi</li>
                             <li>Work desk</li>
                             <li>Flat-screen TV</li>
-                            <li>Daily housekeeping</li>
                         </ul>
-                        <div class="room-actions">
-                            <a href="#booking" class="btn">Book Now</a>
-                            <a href="#gallery" class="btn btn-outline">View Gallery</a>
-                        </div>
                     </div>
                 </div>
 
@@ -926,20 +721,14 @@
                     <div class="room-content">
                         <h3>Twin Room</h3>
                         <p>Perfect for friends or colleagues traveling together, our twin rooms feature two comfortable beds with premium bedding. The spacious layout ensures a comfortable stay for all guests.</p>
-                        <ul class="room-features">
+                        <ul>
                             <li>Two comfortable single beds</li>
                             <li>Spacious en-suite bathroom</li>
                             <li>Private Balcony</li>
                             <li>Free Wi-Fi</li>
                             <li>Work desk</li>
                             <li>Mini refrigerator stocked on order</li>
-                            <li>Flat-screen TV</li>
-                            <li>Daily housekeeping</li>
                         </ul>
-                        <div class="room-actions">
-                            <a href="#booking" class="btn">Book Now</a>
-                            <a href="#gallery" class="btn btn-outline">View Gallery</a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -997,7 +786,7 @@
         </div>
     </section>
 
-    <!-- Facilities Section - UPDATED with Learn More buttons -->
+    <!-- Facilities Section -->
     <section class="facilities" id="facilities">
         <div class="container">
             <div class="section-title">
@@ -1011,7 +800,6 @@
                     <div class="facility-content">
                         <h3>Restaurant</h3>
                         <p>Enjoy delicious local and international cuisine in our elegant restaurant with elegant ambience.</p>
-                        <a href="#contact" class="btn">Learn More</a>
                     </div>
                 </div>
                 <div class="facility-card">
@@ -1021,7 +809,6 @@
                     <div class="facility-content">
                         <h3>Bar & Lounge</h3>
                         <p>Unwind with your favorite drinks in our cozy bar area, perfect for socializing and relaxation.</p>
-                        <a href="#contact" class="btn">Learn More</a>
                     </div>
                 </div>
                 <div class="facility-card">
@@ -1031,7 +818,6 @@
                     <div class="facility-content">
                         <h3>Conference Facilities</h3>
                         <p>Well-equipped 15pax max board room for business events, conferences, and special occasions.</p>
-                        <a href="#contact" class="btn">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -1272,11 +1058,9 @@
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
-                header.style.boxShadow = '0 2px 15px rgba(0,0,0,0.1)';
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
             } else {
-                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = 'none';
             }
         });
 
